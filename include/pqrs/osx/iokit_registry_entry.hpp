@@ -133,12 +133,12 @@ public:
     return std::nullopt;
   }
 
-  std::optional<iokit_registry_entry_id> find_registry_entry_id(void) const {
+  std::optional<iokit_registry_entry_id::value_t> find_registry_entry_id(void) const {
     if (registry_entry_) {
       uint64_t id;
       kern_return r = IORegistryEntryGetRegistryEntryID(*registry_entry_, &id);
       if (r) {
-        return iokit_registry_entry_id(id);
+        return iokit_registry_entry_id::value_t(id);
       }
     }
 
