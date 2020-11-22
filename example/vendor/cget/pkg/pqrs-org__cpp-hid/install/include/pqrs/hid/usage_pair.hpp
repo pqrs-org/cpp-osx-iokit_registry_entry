@@ -40,7 +40,7 @@ public:
     return *this;
   }
 
-  auto operator<=>(const usage_pair&) const = default;
+  constexpr auto operator<=>(const usage_pair&) const = default;
 
 private:
   usage_page::value_t usage_page_;

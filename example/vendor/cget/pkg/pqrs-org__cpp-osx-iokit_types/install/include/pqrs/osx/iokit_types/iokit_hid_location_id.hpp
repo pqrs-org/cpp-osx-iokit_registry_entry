@@ -17,7 +17,7 @@ struct value_t : type_safe::strong_typedef<value_t, uint64_t>,
                  type_safe::strong_typedef_op::relational_comparison<value_t> {
   using strong_typedef::strong_typedef;
 
-  auto operator<=>(const value_t& other) const {
+  constexpr auto operator<=>(const value_t& other) const {
     return type_safe::get(*this) <=> type_safe::get(other);
   }
 };
