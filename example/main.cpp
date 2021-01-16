@@ -13,5 +13,13 @@ int main(void) {
     std::cout << "name: " << *name << std::endl;
   }
 
+  if (auto iokit_build_version = entry.find_string_property(CFSTR("IOKitBuildVersion"))) {
+    std::cout << "iokit_build_version: " << *iokit_build_version << std::endl;
+  }
+
+  if (auto os_kernel_cpu_type = entry.find_int64_property(CFSTR("OSKernelCPUType"))) {
+    std::cout << "os_kernel_cpu_type: " << *os_kernel_cpu_type << std::endl;
+  }
+
   return 0;
 }
