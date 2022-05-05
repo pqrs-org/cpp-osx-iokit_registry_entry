@@ -29,8 +29,8 @@ public:
   explicit iokit_registry_entry(const iokit_object_ptr& registry_entry) : registry_entry_(registry_entry) {
   }
 
-  static iokit_registry_entry get_root_entry(mach_port_t main_port = kIOMainPortDefault) {
-    return iokit_registry_entry(IORegistryGetRootEntry(main_port));
+  static iokit_registry_entry get_root_entry(iokit_mach_port::value_t port = iokit_mach_port::null) {
+    return iokit_registry_entry(IORegistryGetRootEntry(type_safe::get(port)));
   }
 
   //
