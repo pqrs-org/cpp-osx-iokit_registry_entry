@@ -2,7 +2,7 @@
 #include <iostream>
 #include <pqrs/osx/iokit_registry_entry.hpp>
 
-int main(void) {
+int main() {
   auto entry = pqrs::osx::iokit_registry_entry::get_root_entry();
 
   if (auto class_name = entry.get().class_name()) {
