@@ -20,9 +20,7 @@ public:
   // Constructors
   //
 
-  iokit_registry_entry() noexcept
-      : iokit_registry_entry(IO_OBJECT_NULL) {
-  }
+  iokit_registry_entry() noexcept = default;
 
   explicit iokit_registry_entry(io_registry_entry_t registry_entry) noexcept
       : registry_entry_(registry_entry) {
